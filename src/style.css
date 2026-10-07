@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* ---- small custom bits on top of Tailwind ---- */
+
+html,
+body {
+  height: 100%;
+}
+
+/* Pulsing marker used to highlight a tracked package / OXO fallback */
+@keyframes pulse-ring {
+  0% {
+    r: 6;
+    opacity: 0.7;
+  }
+  70% {
+    r: 16;
+    opacity: 0;
+  }
+  100% {
+    r: 16;
+    opacity: 0;
+  }
+}
+.pulse-ring {
+  animation: pulse-ring 1.6s ease-out infinite;
+}
+
+/* Crosshair cursor while placing a hazard zone */
+.zone-placing .map-svg {
+  cursor: crosshair;
+}
+
+/* Smooth map re-render */
+.map-svg * {
+  transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+/* thin scrollbars in the side panel */
+.scroll-thin::-webkit-scrollbar {
+  width: 8px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
